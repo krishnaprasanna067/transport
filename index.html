@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <title>International Freight Forwarders & Customs Brokers</title>
     <link rel="stylesheet" href="style.css">
 
@@ -14,9 +15,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home">HOME</a></li>
                 <li>
-                    <a href="services.html">Our Services</a>
+                    <a href="services.html">OUR SERVICES</a>
                     <ul>
                         <li><a href="#"><img src="airfreight.jpg" alt="Air Freight"> Air Freight</a></li>
                         <li><a href="#"><img src="custom.jpg" alt="Customs Clearance"> Customs Clearance</a></li>
@@ -30,10 +31,10 @@
                         <li><a href="#"><img src="empty.jpg" alt="Empty Container Storage"> Empty Container Storage</a></li>
                     </ul>
                 </li>
-                <li><a href="#specifications">Container Specifications</a></li>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#contact-us">Contact Us</a></li>
+                <li><a href="#specifications">CONTAINER SPECIFICATIONS</a></li>
+                <li><a href="#about-us" style="font: Poppins, sans-serif">ABOUT US</a></li>
+                <li><a href="#awards">AWARDS</a></li>
+                <li><a href="#contact-us">CONTACT US</a></li>
             </ul>
         </nav>
     </header>
@@ -75,7 +76,7 @@
             <div class="frame">
                 <img src="custom.jpg" alt="Image 2">
                 <h3>Customs Clearances</h3>
-                <p >And allied services.</p>
+                <p>And allied services.</p>
             </div>
             <div class="frame">
                 <img src="wearhouse.jpg" alt="Image 3">
@@ -103,21 +104,12 @@
                 <p>Specialized units for temperature-sensitive cargo.</p>
             </div>
             <div class="frame">
-                <img src="special.jpg" alt="Image 8">
-                <h3>Special Equipment Units</h3>
-                <p>For overdimensional cargo.</p>
-            </div>
-            <div class="frame">
-                <img src="trailers.jpg" alt="Image 9">
+                <img src="trailers.jpg" alt="Image 8">
                 <h3>Own Trailers</h3>
                 <p>For inland transportation.</p>
             </div>
-            <div class="frame">
-                <img src="empty.jpg" alt="Image 10">
-                <h3>Empty Container Storage</h3>
-                <p>Handling and storage facilities.</p>
-            </div>
         </div>
+        
         <button class="view-more" onclick="window.location.href='services.html'">Know More</button>
     </section>
 </div>
@@ -219,21 +211,47 @@
 
 <div class="awards_form">
     <section id="awards">
-        <h1 style="color:white;">Awards</h1>
+        <h1 style="color:white;">Awards and Certifications</h1>
+
+        <!-- Add Previous Button -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+
         <div class="awards-container">
-            <div class="award-block">
-                <img src="trophy1.jpg" alt="Award 1">
+            <div class="award-block" style="display: block;">
+                <img src="trophy1.jpg" alt="Award 1" onclick="openModal(this.src)">
                 <h4 style="color: #0d0d0d;">Best Freight Forwarder 2023</h4>
                 <p style="color: #0d0d0d;">Recognized for excellence in service.</p>
             </div>
-            <div class="award-block">
-                <img src="trophy2.jpg" alt="Award 2">
+            <div class="award-block" style="display: block;">
+                <img src="trophy2.jpg" alt="Award 1" onclick="openModal(this.src)">
+                <h4 style="color: #0d0d0d;">Best Freight Forwarder 2023</h4>
+                <p style="color: #0d0d0d;">Recognized for excellence in service.</p>
+            </div>
+            <div class="award-block" style="display: block;">
+                <img src="trophy02.png" alt="Award 1" onclick="openModal(this.src)">
+                <h4 style="color: #0d0d0d;">Best Freight Forwarder 2023</h4>
+                <p style="color: #0d0d0d;">Recognized for excellence in service.</p>
+            </div>
+            <div class="award-block" style="display: none;">
+                <img src="trophy01.png" alt="Award 2" onclick="openModal(this.src)">
                 <h4 style="color: #0d0d0d;">Top Logistics Provider 2022</h4>
                 <p style="color: #0d0d0d;">Awarded for outstanding logistics solutions.</p>
             </div>
+            
         </div>
+
+        <!-- Add Next Button -->
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </section>
 </div>
+
+<!-- Modal for viewing large images -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+
 <div class="contact_form">
     <section id="contact-us">
         <h1 style="color:rgb(6, 6, 6);">Contact Us</h1>
@@ -291,6 +309,41 @@
         });
 
         window.addEventListener('resize', updateCarousel);
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.award-block');
+        
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = i === index ? 'block' : 'none';
+                });
+            }
+        
+            function changeSlide(step) {
+                currentSlide += step;
+                if (currentSlide >= slides.length) {
+                    currentSlide = 0;
+                } else if (currentSlide < 0) {
+                    currentSlide = slides.length - 1;
+                }
+                showSlide(currentSlide);
+            }
+        
+            // Initial display of the first slide
+            showSlide(currentSlide);
+            function openModal(src) {
+                var modal = document.getElementById("imageModal");
+                var modalImg = document.getElementById("modalImage");
+                modal.style.display = "block";
+                modalImg.src = src;
+            }
+        
+            // Function to close the modal
+            function closeModal() {
+                var modal = document.getElementById("imageModal");
+                modal.style.display = "none";
+            }
+        
+        
     </script>
 </body>
 </html>
