@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air Freight - International Freight Forwarders & Customs Brokers</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <style>
         body {
-            font-family: sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
             margin: 0;
             padding: 0;
             background-color: #ffffff;
@@ -78,6 +80,7 @@
             max-width: 40%; /* Limit the width of the image */
             height: auto; /* Maintain aspect ratio */
             margin-right: 20px; /* Space between image and text */
+            animation: fadeInLeft 2s ease;
         }
         
         .text-content {
@@ -92,21 +95,25 @@
             font-weight: 100;
             margin-top: 70px;
             margin-bottom: 0;
+            animation: fadeInLeft 2s ease;
         }
         h2 {
             font-size: 2em; /* Increase heading sizes */
             margin-top: 2px;
             margin-bottom: 2px;
             font-weight: 100;
+            animation: fadeInLeft 2s ease;
         }
         
         h3 {
             font-size: 1.5em; /* Increase heading sizes */
+            animation: fadeInLeft 2s ease;
         }
 
         ul {
             padding-left: 20px;
             text-align: left; /* Align the list to the left */
+            animation: fadeInLeft 2s ease;
         }
 
         .view-more-button {
@@ -121,6 +128,16 @@
 
         .view-more-button:hover {
             background-color: #050505;
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
         
     </style>
