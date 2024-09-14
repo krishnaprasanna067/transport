@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <title>Air Freight - International Freight Forwarders & Customs Brokers</title>
     <style>
-        /* Include your existing CSS here */
-        /* Include your existing CSS here */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -15,39 +13,39 @@
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensure full viewport height */
-            align-items: center; /* Center align content */
-            justify-content: flex-start; /* Align content at the start */
+            min-height: 100vh;
+            align-items: center;
+            justify-content: flex-start;
         }
-        
+
         header {
             background-color: white;
             padding: 10px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: fixed; /* Fixed position to stay at the top */
-            width: 100%; /* Full width */
-            top: 0; /* Ensure it's at the top of the page */
-            z-index: 1000; /* Ensure it's above other content */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo img {
             height: 50px;
             margin-left: 20px;
         }
-        
+
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
         }
-        
+
         nav ul li {
             margin-right: 20px;
         }
-        
+
         nav ul li a {
             background-color: #1d7997;
             color: white;
@@ -58,137 +56,146 @@
             margin-top: 20px;
             text-decoration: none;
         }
-        
+
         nav ul li a:hover {
             background-color: #050505;
         }
 
-.container {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px; /* Adjusted for fixed header */
-    padding-bottom: 20px;
-    position: relative;
-    margin-top: 0px; /* Adjusted to reduce space */
-}
+        .container {
+            flex: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            padding-bottom: 20px;
+            position: relative;
+        }
 
-.image-overlay {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-image: url('image01.jpg'); /* Replace with actual image */
-    background-size: cover;
-    background-position: center;
-    margin-top: 0; /* Reduced margin */
-    margin-bottom: 0;
-}
+        /* Top image with overlay heading */
+        .image-overlay {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-image: url('image01.jpg'); /* Replace with actual image */
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+        }
 
-.image-overlay h1 {
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translate(-0%, -0%);
-    color: white;
-    font-size: 3em;
-    text-align: center;
-    width: 80%;
-    max-width: 1000px;
-    animation: fadeInDown 2s ease;
-}
+        .image-overlay h1 {
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: translate(-0%, -0%);
+            color: white;
+            font-size: 3em;
+            text-align: center;
+            animation: fadeInDown 2s ease;
+        }
 
-.content {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 1000px;
-    margin: 10px 0;
-    text-align: center;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s ease;
-    position: relative;
-}
+        /* Content and side image section */
+        .content-section {
+            display: flex;
+            width: 80%;
+            max-width: 1200px; /* Increased maximum width for the section */
+            margin: 20px 0;
+        }
 
-.sidebar {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    width: 250px;
-    text-align: center;
-    font-size: 2em;
-    animation: fadeInLeft 2s ease;
-    padding-top: 30px;
-}
+        /* Left side image beside the content */
+        .image-container {
+            flex: 1;
+            margin-right: 20px;
+            margin-left: 10px;
+            width: 50%; /* Allocate more width to the image container */
+            max-width: 1000px; /* Increased max width */
+        }
 
-.sidebar h2 {
-    font-size: 3em; /* Increase size for main headings */
-    margin: 5px 0;
-}
+        .image-container img {
+            width: 100%; /* Fill the container */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 1000px; /* Increased max width for image */
+            border-radius: 10px;
+        }
 
-.sidebar p {
-    font-size: 0.6em; /* Small size for subheadings */
-    margin: 0;
-    padding-left: 20px;
-}
+        /* Sidebar with stats below the image */
+        .sidebar {
+            margin-top: 20px;
+            text-align: center;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            background-color:#1d7997;
+        }
 
-p {
-    text-align: justify;
-    margin-bottom: 1em;
-    line-height: 1.6;
-    color: #333;
-    font-weight: 500;
-    animation: fadeInUp 1s ease;
-}
+        .sidebar h2 {
+            font-size: 5em; /* Increase size for main headings */
+            margin: 5px 0;
+        }
 
-h1 {
-    font-weight: 200;
-}
-/* Animations */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .sidebar p {
+            font-size: 1.5em; /* Small size for subheadings */
+            margin: 0;
+            padding-left: 20px;
+            text-align: center;
+        }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        /* Right side content */
+        .content {
+            flex: 1.5;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease;
+            text-align: left;
+        }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+        p {
+            text-align: justify;
+            margin-bottom: 1em;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 500;
+            animation: fadeInUp 1s ease;
+        }
 
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+        h1 {
+            font-weight: 200;
+        }
 
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -203,34 +210,43 @@ h1 {
         </nav>
     </header>
 
+    <!-- Top image with "About Us" overlay heading -->
     <div class="image-overlay">
         <h1>About Us</h1>
     </div>
 
     <div class="container">
-        <div class="sidebar">
-            <h2>15+</h2>
-            <p>Years of Experience</p>
-            <h2>2K+</h2>
-            <p>Happy Customers</p>
-            <p>India Wide</p>
-        </div>
-        
-        <div class="content">
-            <p>
-                JAYA LAXMI FREIGHT FORWARDERS PVT.LTD. is one of the leading INTERNATIONAL FREIGHT FORWARDERS AND CUSTOMS BROKERS presenting versatile services as required in the foreign trade like Customs Clearances, Road Transportation, Storage Facilitation, International Freight Forwarding by Sea and Air along with suggesting better planning and legal fulfillments.
-            </p>
-            <p>
-                JAYA LAXMI is one of the rapidly growing and leading companies in Bharat (India) which has ample capacity to offer excellent services by way of servicing the prestigious clients dealing in foreign trade throughout the world.
-            </p>
-            <p>
-                We have exemplary expertise and experience in International Freight Forwarding business either by sea or air.
-            </p>
-            <p>Company is established in the year 1997 and incorporated to Private Limited in 2005. Five offices in Bharat (INDIA).</p>
-            <p>Franchises at all important ICDs and Ports. Brilliant global network to handle the shipments according to client's needs.</p>
-            <p>Manpower and Managerial personnel more than 150 employees. Warehouse Space at all the ICDs (Dry Ports) available.</p>
-            <p>For Customs Clearances and to avail all permissible incentives, we have a separate unit in the name of Jaya Laxmi Clearing House, headed by licensed Customs Broker Dr. P.L. Narasaiah, one of the directors of the company.</p>
-            <p>Plying our own Trailers to provide inland transportation. Empty Container Handling and storage facility is also available.</p>
+        <div class="content-section">
+            <!-- Left side image beside the content -->
+            <div class="image-container">
+                <img src="airfreight.jpg" alt="Air Freight Services">
+                <div class="sidebar">
+                    <h2>15+</h2>
+                    <p>Years of Experience</p>
+                    <h2>2K+</h2>
+                    <p>Happy Customers</p>
+                    <p>India Wide</p>
+
+                </div>
+            </div>
+
+            <!-- Right side content -->
+            <div class="content">
+                <p>
+                    JAYA LAXMI FREIGHT FORWARDERS PVT.LTD. is one of the leading INTERNATIONAL FREIGHT FORWARDERS AND CUSTOMS BROKERS presenting versatile services as required in the foreign trade like Customs Clearances, Road Transportation, Storage Facilitation, International Freight Forwarding by Sea and Air along with suggesting better planning and legal fulfillments.
+                </p>
+                <p>
+                    JAYA LAXMI is one of the rapidly growing and leading companies in Bharat (India) which has ample capacity to offer excellent services by way of servicing the prestigious clients dealing in foreign trade throughout the world.
+                </p>
+                <p>
+                    We have exemplary expertise and experience in International Freight Forwarding business either by sea or air.
+                </p>
+                <p>Company is established in the year 1997 and incorporated to Private Limited in 2005. Five offices in Bharat (INDIA).</p>
+                <p>Franchises at all important ICDs and Ports. Brilliant global network to handle the shipments according to client's needs.</p>
+                <p>Manpower and Managerial personnel more than 150 employees. Warehouse Space at all the ICDs (Dry Ports) available.</p>
+                <p>For Customs Clearances and to avail all permissible incentives, we have a separate unit in the name of Jaya Laxmi Clearing House, headed by licensed Customs Broker Dr. P.L. Narasaiah, one of the directors of the company.</p>
+                <p>Plying our own Trailers to provide inland transportation. Empty Container Handling and storage facility is also available.</p>
+            </div>
         </div>
     </div>
 </body>
